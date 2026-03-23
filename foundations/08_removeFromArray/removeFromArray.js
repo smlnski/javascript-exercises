@@ -1,12 +1,6 @@
-const removeFromArray = function (array, item) {
+const removeFromArray = function (array, ...itemsToRemove) {
 
-    function isNotItem(value) {
-        return function (item) {
-            return value != item;
-        }
-    }
-
-    return array.filter(isNotItem(item));
+    return array.filter(item => !itemsToRemove.includes(item));
 };
 
 // Do not edit below this line
